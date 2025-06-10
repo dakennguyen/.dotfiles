@@ -7,7 +7,9 @@ set -o vi
 export PROJECT_PATHS_STR="${(j.:.)PROJECT_PATHS}"
 
 DEFAULT_USER=$USER
-export PATH=$GOBIN:$GOPATH/bin:~/.local/bin:~/.dotfiles/bin:$PATH
+[ -n "$GOBIN" ] && [ -d "$GOBIN" ] && PATH="$GOBIN:$PATH"
+[ -n "$GOPATH" ] && [ -d "$GOPATH/bin" ] && PATH="$GOPATH/bin:$PATH"
+export PATH=~/.local/bin:~/.dotfiles/bin:$PATH
 export CLICOLOR=1
 export CLOUD=$HOME/Documents
 export GPG_TTY=$TTY
@@ -15,7 +17,7 @@ export GPG_TTY=$TTY
 #---------------------------------------------------------------------------
 # Aliases
 #---------------------------------------------------------------------------
-alias v=$EDITOR
+alias v="source ~/.zshenv && \$EDITOR"
 alias cf="cd ~/.dotfiles && v"
 alias cfn="cd ~/.config/nvim && v"
 alias note="nvim '$CLOUD/Notes'"
