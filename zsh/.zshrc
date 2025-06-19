@@ -35,5 +35,3 @@ zinit cdreplay -q
 
 #====> section: load config
 source ~/.dotfiles/zsh/config.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -9,6 +9,7 @@ export PROJECT_PATHS_STR="${(j.:.)PROJECT_PATHS}"
 DEFAULT_USER=$USER
 [ -n "$GOBIN" ] && [ -d "$GOBIN" ] && PATH="$GOBIN:$PATH"
 [ -n "$GOPATH" ] && [ -d "$GOPATH/bin" ] && PATH="$GOPATH/bin:$PATH"
+export EDITOR="nvim"
 export PATH=~/.local/bin:~/.dotfiles/bin:$PATH
 export CLICOLOR=1
 export CLOUD=$HOME/Documents
@@ -26,4 +27,4 @@ alias q="exit"
 alias s="source ~/.zshenv && source ~/.zshrc"
 
 [ -f ~/.dotfiles/zsh/nnn.zsh ] && source ~/.dotfiles/zsh/nnn.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+command -v fzf >/dev/null && source <(fzf --zsh)

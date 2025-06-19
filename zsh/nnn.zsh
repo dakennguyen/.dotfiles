@@ -30,5 +30,7 @@ n ()
 alias l='n -de'
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_PLUG='f:fzopen;p:preview-tui;o:-!qlmanage -p "$nnn" > /dev/null 2>&1'
-export NNN_OPTS="H"
+ # -H      show hidden files
+ # -A      no dir auto-enter during filter
+export NNN_OPTS="HA"
 # export NNN_OPENER=~/.config/nnn/plugins/nuke
