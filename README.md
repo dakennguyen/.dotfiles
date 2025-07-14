@@ -8,6 +8,11 @@ Authenticate with Github:
 
     echo "machine github.com login <USERNAME> password <GITHUB_PAT>" >> ~/.netrc
 
+Setup asdf completions:
+
+    mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
+    asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
+
 ### Packages
 Download the binaries and symlink into `~/.local/bin`:
 - [neovim](https://github.com/neovim/neovim/releases)
@@ -15,3 +20,4 @@ Download the binaries and symlink into `~/.local/bin`:
 - [nnn](https://github.com/jarun/nnn/releases)
 - [fzf](https://github.com/junegunn/fzf/releases)
 - [fd](https://github.com/sharkdp/fd/releases)
+- [asdf](https://github.com/asdf-vm/asdf/releases)

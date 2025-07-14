@@ -9,6 +9,7 @@ export PROJECT_PATHS_STR="${(j.:.)PROJECT_PATHS}"
 DEFAULT_USER=$USER
 [ -n "$GOBIN" ] && [ -d "$GOBIN" ] && PATH="$GOBIN:$PATH"
 [ -n "$GOPATH" ] && [ -d "$GOPATH/bin" ] && PATH="$GOPATH/bin:$PATH"
+[ -d "${ASDF_DATA_DIR:-$HOME/.asdf}/shims" ] && PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export EDITOR="nvim"
 export PATH=~/.local/bin:~/.dotfiles/bin:$PATH
 export CLICOLOR=1

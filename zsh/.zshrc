@@ -27,9 +27,9 @@ zinit snippet OMZP::pj
 #> zinit plugins
 zinit light romkatv/powerlevel10k
 zinit light zdharma/fast-syntax-highlighting
-zinit light asdf-vm/asdf
 
 #> initialise completions with ZSH's compinit
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 
